@@ -11,6 +11,10 @@
     
 }
 
+.signin-header {
+    display: flex;
+    align-items: center;
+}
 
 .signin-button{
     display: flex;
@@ -42,9 +46,9 @@
 }
 
 .logo-text{
-    color: #0c5f79;
+    color: #90EE90;
     text-align: center;
-    /* margin-left: 200px; */
+    margin-left: 20px;
 }
 
 .header-text{
@@ -67,8 +71,12 @@
     width: 100%;
     border: none;
     border-radius: 0;
-    margin: 25px 0;
-    
+    margin: 25px 0; 
+}
+
+.input-form > input {
+    padding: 10px;
+    outline: none;
 }
 
 

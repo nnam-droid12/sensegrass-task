@@ -23,32 +23,35 @@ const SignIn = () =>{
 
     return(
     <div className='sign-in'>
-    <div className='login-bg'>
-    <img src={Logo} alt='logo' className='sg-logo' />
-    <span className='logo-text'>SENSEGRASS</span>
-    <h4 className='header-text'>LOGIN TO YOUR SG ACCOUNT</h4>
-    <div className='input-form'>
-     <input className='email'
-     type='email'
-     value={email}
-     placeholder='email'
-     onChange={(e) => setEmail(e.target.value)} />
-    <br></br>
-    <br></br>
-      <input className='password'
-     type='password'
-     value={password}
-     placeholder='password'
-     onChange={(e) => setPassword(e.target.value)}
-     required />
-     </div>
-     <Link to='/signup' className='signin-member'>NOT AN SG MEMBER YET?</Link>
-     <Link to='/forgotpassword' className='forgotpassword'>Forgot password?</Link>
-     <br></br>
-    <br></br>
-     <button className='signin-button' onClick={SignIn}>SIGN IN</button>
-     <img src={BackgroundImage} alt='background' className='side-image' />
-     </div>
+        <div>
+        <div className='signin-header'>
+        <img src={Logo} alt='logo' className='sg-logo' />
+        <span className='logo-text'>SENSEGRASS</span>
+        </div>
+        <h4 className='header-text'>LOGIN TO YOUR SG ACCOUNT</h4>
+        <div className='input-form'>
+        <input className='email'
+        type='email'
+        value={email}
+        placeholder='email'
+        onChange={(e) => setEmail(e.target.value)} />
+        <br></br>
+        <br></br>
+        <input className='password'
+        type='password'
+        value={password}
+        placeholder='password'
+        onChange={(e) => setPassword(e.target.value)}
+        required />
+        </div>
+        <Link to='/signup' className='signin-member'>NOT AN SG MEMBER YET?</Link>
+        <Link to='/forgotpassword' className='forgotpassword'>Forgot password?</Link>
+        <br></br>
+        <br></br>
+        <button className='signin-button' onClick={SignIn}>SIGN IN</button>
+        </div>
+        <img src={BackgroundImage} alt='background' className='side-image' />
+        
     </div>
     );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
-import GraphImage from '../../assets/google-maps1.jpg';
+import MapImage from '../../assets/google-maps1.jpg';
 import './Welcome.css';
 
 
@@ -9,6 +9,7 @@ import './Welcome.css';
 const WelcomePage = () =>{
 
   const [maplocation, setMaplocation] = useState('');
+  const [user, setUser] = useState(null);
 
   let welcomenavigate = useNavigate();
 
@@ -21,7 +22,16 @@ const WelcomePage = () =>{
         }
       }
 
-      
+
+      useEffect(() =>{
+        CheckLoggedInState();
+      }, [])
+    
+      const CheckLoggedInState =  () =>{
+        Auth.currentAuthenticatedUser()
+          .then(currentUser => setUser(currentUser.CognitoUser))
+          .catch(() => console.log("Not signed in"));
+      } 
 
       useEffect(() => {
         const getMapLocation = async () =>{
@@ -33,8 +43,7 @@ const WelcomePage = () =>{
           }
         });
         const mapjsonData = await mapData.json();
-        setMaplocation(mapjsonData);
-        console.log(mapjsonData);
+        setMaplocation(mapjsonData.data);
       }
         getMapLocation();
       },[])
@@ -43,14 +52,29 @@ const WelcomePage = () =>{
     return(
     <div className='welcome-body'>
       <button className='button' onClick={SignOut}>
-        Sign Out
+        Sign Out 
       </button>
-        <h2 className='welcome-header'>Welcome to Sensegrass</h2>
-        <div className='maplocation'>
-        <img src={GraphImage} alt='graph' className='graph-image' />
-        <h3>{maplocation.country}</h3>
-        <h3>{maplocation.city}</h3>
+        <h2 className='welcome-header'>Welcome to Sensegrass {user}</h2>
+        
+        {
+          maplocation.length ?
+          <div className='maplocation'>
+          <img src={MapImage} alt='graph' className='graph-image' />
+          {
+            maplocation.map((i) => 
+             <div className='map-data' key={i.id}>
+              <h3>{i.country}</h3>
+              <h3>{i.city}</h3>
+             </div>
+            )
+          }
+        
+
         </div> 
+         : null
+        }
+        
+       
     </div>
     );
 }

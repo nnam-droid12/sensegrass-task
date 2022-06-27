@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from 'react';
-import Amplify, { Auth } from 'aws-amplify';
+import React from 'react';
+import Amplify from 'aws-amplify';
 import { Routes, Route } from 'react-router-dom';
 import SignIn from './components/Signin/SignIn';
 import SignUp from './components/Signup/SignUp';
@@ -13,20 +13,7 @@ import WelcomePage from './components/welcomepage/Welcome';
 Amplify.configure(awsconfig)
 
 function App() {
-
-  const [loggedin, setLoggedin] = useState(false);
-
-  useEffect(() =>{
-    CheckLoggedInState();
-  }, [])
-
-  const CheckLoggedInState = () =>{
-    Auth.currentAuthenticatedUser().then(() =>{
-      setLoggedin(true)
-    }).catch(() =>{
-      setLoggedin(false);
-    })
-  }
+  
   
     return(
     <div className="App">
