@@ -26,7 +26,7 @@ const ForgotPassword = () =>{
          <h4 className='header-text'>Password Reset</h4>
          <div className='input-form'>
          <input className='password-username'
-         name='email'
+         type='email'
          placeholder='email'
          value={username}
          onChange={(e) => setUsername(e.target.value)}
@@ -34,7 +34,7 @@ const ForgotPassword = () =>{
          <br></br>
          <br></br>
           <input className='password-number'
-         name='number'
+         type='number'
          placeholder='code sent to mail'
          value={number}
          onChange={(e) => setNumber(e.target.value)}
@@ -42,7 +42,7 @@ const ForgotPassword = () =>{
          <br></br>
          <br></br>
           <input className='password-newpassword'
-         name='password'
+         type='password'
          placeholder='new pasword'
          value={newpassword}
          onChange={(e) => setNewpassword(e.target.value)}

@@ -24,7 +24,6 @@
 .maplocation{
     position: relative;
     margin: 3%;
-    z-index: 2000;
 }
 
 .map-country{
@@ -32,7 +31,6 @@
     top: 17px;
     left: 50px;
     word-spacing: 9000px;
-    z-index: 1000;
 }
 
 .map-city{
@@ -40,6 +38,5 @@
     bottom: 20px;
     left: 10px;
     word-spacing: 9000px;
-    z-index: 1000;
 }
 

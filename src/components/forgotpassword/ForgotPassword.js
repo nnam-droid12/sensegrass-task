@@ -20,7 +20,7 @@ const ForgotPassword = () =>{
 
     return(
         <div className='sign-in'>
-        <div className='login-bg'>
+        <div>
          <input className='password-forgot'
          type='email'
          placeholder='Email'
