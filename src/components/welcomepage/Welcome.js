@@ -35,7 +35,7 @@ const WelcomePage = () =>{
 
       useEffect(() => {
         const getMapLocation = async () =>{
-        const mapData = await fetch('http://localhost:5000/maplocations', {
+        const mapData = await fetch('https://sensegrass-task-api.herokuapp.com/maplocations', {
           method: 'GET',
           headers:{
             'Content-Type': 'application/json',
@@ -63,8 +63,8 @@ const WelcomePage = () =>{
           {
             maplocation.map((i) => 
              <div className='map-data' key={i.id}>
-              <h3>{i.country}</h3>
-              <h3>{i.city}</h3>
+              <h3 className='map-country'>{i.country}</h3>
+              <h3 className='map-city'>{i.city}</h3>
              </div>
             )
           }
