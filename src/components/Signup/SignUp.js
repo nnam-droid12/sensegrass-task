@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/senselogo.png';
 import BackgroundImage from '../../assets/background-image.jpg';
-import './SignUp.css';
+
 
 
 const SignUp = () =>{
