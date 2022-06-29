@@ -85,8 +85,8 @@ input[type='password'] {
   }
 
 .side-image{
-    box-shadow: 0 10px 10px 10px rgba(121, 121, 121, .65);
-    border-radius: 16px;
+    /* box-shadow: 0 10px 10px 10px rgba(121, 121, 121, .65);
+    border-radius: 16px; */
     width: 400px;
     height: 400px;
    margin-left: 400px;
