@@ -1,6 +1,6 @@
 {
-  "short_name": "Sensegrass App",
-  "name": "Sensegrass App Task",
+  "short_name": "Sensegrass",
+  "name": "Sensegrass",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "senselogo.png",
+      "src": "favicon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "senselogo.png",
+      "src": "favicon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

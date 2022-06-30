@@ -3,7 +3,7 @@ import { Auth } from 'aws-amplify';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from '../../assets/senselogo.png';
 import BackgroundImage from '../../assets/background-image.jpg';
-
+import './Signup.css';
 
 
 const SignUp = () =>{
@@ -28,41 +28,41 @@ const SignUp = () =>{
       }
 
     return(
-    <div className='sign-in'>
+    <div className='sign-up'>
         <div>
-        <div className='signin-header'>
-        <img src={Logo} alt='logo' className='sg-logo' />
-        <span className='logo-text'>SENSEGRASS</span>
+        <div className='signup-header'>
+        <img src={Logo} alt='logo' className='sg1-logo' />
+        <span className='logo1-text'>SENSEGRASS</span>
         </div>
-        <h4 className='header-signup'>LET'S GET STARTED</h4>
-        <div className='input-form'>
-        <input className='email'
-        name='email'
-        value={username}
-        placeholder='email'
-        onChange={(e) => setUsername(e.target.value)} />
+        <h4 className='headerup-text'>LET'S GET STARTED</h4>
+        <div className='signupinput-form'>
+        <input name='email'
+          type='email'
+          value={username}
+          placeholder='email'
+          onChange={(e) => setUsername(e.target.value)} />
         <br></br>
         <br></br>
-          <input className='password'
-        type='password'
-        value={password}
-        placeholder='password'
-        onChange={(e) => setPassword(e.target.value)} />
+          <input name='password'
+          type='password'
+          value={password}
+          placeholder='password'
+          onChange={(e) => setPassword(e.target.value)} />
         <br></br>
         <br></br>
-          <input className='confirm password'
-        type='password'
-        value={confirmpassword}
-        placeholder='confirm password'
-        onChange={(e) => setConfirmPassword(e.target.value)}
+          <input name='confirmPassword'
+          type='password'
+          value={confirmpassword}
+          placeholder='confirm password'
+          onChange={(e) => setConfirmPassword(e.target.value)}
           />
           </div>
-          <Link to='/' className='signin-member'>ALREADY AN SG MEMBER?</Link>
+          <Link to='/' className='signup-member'>ALREADY AN SG MEMBER?</Link>
           <br></br>
           <br></br>
-        <button className='signin-button' onClick={SignUp}>Sign Up</button>
+        <button className='signup-button' onClick={SignUp}>Sign Up</button>
         </div>
-        <img src={BackgroundImage} alt='background' className='side-image' />
+        <img src={BackgroundImage} alt='agric' className='signup-image' />
      </div>
     );
 }

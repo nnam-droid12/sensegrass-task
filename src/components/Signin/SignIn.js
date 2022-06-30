@@ -8,13 +8,13 @@ import './Signin.css';
 const SignIn = () =>{
 
     const[email, setEmail] = useState("");
-    const[password, setPassword] = useState("");
+    const[signinpassword, setSigninPassword] = useState("");
 
     let signinnavigate = useNavigate();
 
     const SignIn = async () =>{
         try{
-             await Auth.signIn(email, password);
+             await Auth.signIn(email, signinpassword);
              signinnavigate('/welcome');
         }catch(error){
             console.log('error logging user in',error)
@@ -30,18 +30,18 @@ const SignIn = () =>{
         </div>
         <h4 className='header-text'>LOGIN TO YOUR SG ACCOUNT</h4>
         <div className='input-form'>
-        <input className='email'
+        <input
         type='email'
         value={email}
         placeholder='email'
         onChange={(e) => setEmail(e.target.value)} />
         <br></br>
         <br></br>
-        <input className='password'
+        <input
         type='password'
-        value={password}
+        value={signinpassword}
         placeholder='password'
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={(e) => setSigninPassword(e.target.value)}
         required />
         </div>
         <Link to='/signup' className='signin-member'>NOT AN SG MEMBER YET?</Link>
