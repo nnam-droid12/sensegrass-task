@@ -43,6 +43,8 @@ const SignUp = () =>{
           onChange={(e) => setUsername(e.target.value)} />
         <br></br>
         <br></br>
+          <p>Password must be 12 characters long</p><br></br>
+          <p>one Uppercase,lowercase,1234,!@#$&</p>
           <input name='password'
           type='password'
           value={password}
