@@ -39,23 +39,21 @@ const SignUp = () =>{
         <input name='email'
           type='email'
           value={username}
-          placeholder='email'
+          placeholder='Email ID'
           onChange={(e) => setUsername(e.target.value)} />
-        <br></br>
-        <br></br>
-          <p>Password must be 12 characters long</p><br></br>
-          <p>one Uppercase,lowercase,1234,!@#$&</p>
+          <p style={{color: '#0F9D58', fontStyle: 'italic'}}>Password must be 12 characters long<br></br>
+          <p style={{color: '#0F9D58', fontStyle: 'italic'}}>one Uppercase,lowercase,1234,!@#$&</p></p>
           <input name='password'
           type='password'
           value={password}
-          placeholder='password'
+          placeholder='Password'
           onChange={(e) => setPassword(e.target.value)} />
         <br></br>
         <br></br>
           <input name='confirmPassword'
           type='password'
           value={confirmpassword}
-          placeholder='confirm password'
+          placeholder='Confirm Password'
           onChange={(e) => setConfirmPassword(e.target.value)}
           />
           </div>
