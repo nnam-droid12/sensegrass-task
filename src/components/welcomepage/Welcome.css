@@ -1,6 +1,7 @@
 .welcome-body{
     font-family: montserrat, sans-serif;
     background-color: #fff;
+    width: 100%;
     margin-top: 2.35rem;
     display: flex;
     align-items: center;
@@ -16,28 +17,44 @@
     margin-bottom: 3px;
 }
 
-.graph-image{
-    width: 800px;
-    height: 500px;
+
+.maplocation-image{
+    grid-area: overflow;
 }
 
 .maplocation{
-    position: relative;
-    margin: 3%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:1fr; 
+    grid-template-areas: "overflow";
+    /* position: relative;
+    display: flex;
+    margin: 5%; */
 }
 
+.map-data{
+    grid-area:overflow;
+    color: black;
+    margin: auto auto auto 5%;
+    font-size: 1.5rem;
+    line-height: 5rem;
+    width: 100px;
+}
+
+
+/* 
 .map-country{
-    position: absolute;
+    position: inherit;
     top: 17px;
     left: 50px;
-    word-spacing: 9000px;
+    word-spacing: 500px;
 }
 
 .map-city{
-    position: absolute;
+    position: inherit;
     bottom: 20px;
     left: 10px;
-    word-spacing: 9000px;
+    word-spacing: 500px;
 
-}
+} */
 

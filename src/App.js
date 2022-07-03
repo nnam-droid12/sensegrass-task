@@ -5,10 +5,13 @@ import SignIn from './components/Signin/SignIn';
 import SignUp from './components/Signup/SignUp';
 import ConfirmSignUp from './components/confirmsignup/ConfirmSignup';
 import ForgotPassword from './components/forgotpassword/ForgotPassword';
-import NewPasswordReset from './components/newpasswordreset/NewPasswordReset'
+import NewPasswordReset from './components/newpasswordreset/NewPasswordReset';
 import awsconfig from './aws-exports';
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // import { withAuthenticator } from '@aws-amplify/ui-react';
 import WelcomePage from './components/welcomepage/Welcome';
+
 
 Amplify.configure(awsconfig)
 
@@ -25,7 +28,7 @@ function App() {
          <Route path='/forgotpassword' element={<ForgotPassword />} />
          <Route path='/newpassword' element={<NewPasswordReset />} />
       </Routes>
-      
+      <ToastContainer autoClose={false} />
     </div>
     );
   

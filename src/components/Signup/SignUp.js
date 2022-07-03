@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Logo from '../../assets/senselogo.png';
 import BackgroundImage from '../../assets/background-image.jpg';
 import './Signup.css';
@@ -16,14 +17,14 @@ const SignUp = () =>{
 
       const SignUp = async () =>{
           try{
-            const { Newuser } = await Auth.signUp({
+            await Auth.signUp({
                 username, 
                 password
             });
+            toast.success('Account Created Successfully')
             signupnavigate('/confirmsignup')
-            console.log(Newuser)
           }catch(error){
-            console.log('error signing up', error)
+            toast.error('Error Registering user.')
           }
       }
 

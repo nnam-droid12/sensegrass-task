@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ForgotPassword = () =>{
 
@@ -11,19 +12,27 @@ const ForgotPassword = () =>{
 
     const SubmitNewpassword = async () =>{
         try{
-            const password_data = await Auth.forgotPasswordSubmit(username, number, newpassword);
+            await Auth.forgotPasswordSubmit(username, number, newpassword);
+            toast.success('Password Reset Successfully');
             newnavigate('/');
-            console.log(password_data)
 
         }catch(err){
-            console.log('', err)
+            toast.error('Password Must be 12 Characters long.');
         }
     }
 
     return(
         <div className='sign-in'>
          <div classNme='signin-header'>
-         <h4 className='header-text'>Password Reset</h4>
+         <h3 style={{display: 'flex', 
+        justifyContent:'center', 
+        alignItems:'center',color:'#90EE90'}}>Password Reset</h3>
+        <h5 style={{display: 'flex', 
+        justifyContent:'center', 
+        alignItems:'center',color:'#90EE90'}}>* PLEASE ENTER THE CODE SENT TO EMAIL AND ENTER YOUR PREFERRED NEW PASSWORD *</h5>
+        <h5 style={{display: 'flex', 
+        justifyContent:'center', 
+        alignItems:'center',color:'#90EE90'}}>** PASSWORD MUST BE 12 CHARACTERS LONG. ONE UPPERCASE, LOWERCASE,1234, !@#&$ **</h5>
          <div className='input-form'>
          <input className='password-username'
          type='email'

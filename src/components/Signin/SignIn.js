@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Auth } from 'aws-amplify';
 import {  Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Logo from '../../assets/senselogo.png';
 import BackgroundImage from '../../assets/background-image.jpg';
 import './Signin.css';
@@ -15,11 +16,13 @@ const SignIn = () =>{
     const SignIn = async () =>{
         try{
              await Auth.signIn(email, signinpassword);
+             toast.success('user Logged in successfully')
              signinnavigate('/welcome');
         }catch(error){
-            console.log('error logging user in',error)
+            toast.error('Error Logging user,Please check your password');
         }
     }
+
 
     return(
     <div className='sign-in'>
@@ -33,7 +36,7 @@ const SignIn = () =>{
         <input
         type='email'
         value={email}
-        placeholder='email'
+        placeholder='email ID'
         onChange={(e) => setEmail(e.target.value)} />
         <br></br>
         <br></br>
